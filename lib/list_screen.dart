@@ -1,3 +1,5 @@
+import 'dart:js_interop_unsafe';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_todolist/create_screen.dart';
 import 'package:flutter_todolist/todo.dart';
@@ -26,6 +28,12 @@ class _ListScreenState extends State<ListScreen> {
                   onTap: (todo) async{
                     todo.isDone = !todo.isDone;
                     await todo.save();
+                    setState(() {
+
+                    });
+                  },
+                  onDelete: (todo) async{
+                    await todo.delete();
                     setState(() {
 
                     });
